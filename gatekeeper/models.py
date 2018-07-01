@@ -42,7 +42,7 @@ class ModeratedObject(models.Model):
 
     flagged = models.BooleanField(default=False, verbose_name=_('flagged'))
     flagged_by = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True,
-                                   related_name='flagged objects',
+                                   related_name='flaggedobjects',
                                    verbose_name=_('flagged by'))
     flagged_date = models.DateTimeField(blank=True, null=True,
                                         verbose_name=_('flagged date'))
