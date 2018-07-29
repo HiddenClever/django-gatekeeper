@@ -52,7 +52,7 @@ class ModeratedObject(models.Model):
     object_id = models.PositiveIntegerField(verbose_name=_('object id'))
     content_object = generic.GenericForeignKey('content_type', 'object_id')
 
-    created_ip = models.IPAddressField(_('Created user IP'), blank=True, null=True)
+    created_ip = models.GenericIPAddressField(_('Created user IP'), blank=True, null=True)
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, \
                                    related_name="created_moderated_objects",
                                    verbose_name=_('created by'))
